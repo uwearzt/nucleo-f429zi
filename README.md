@@ -2,7 +2,6 @@
 
 [![Apache licensed](https://img.shields.io/badge/license-Apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Build Status](https://travis-ci.org/uwearzt/nucleo-f429zi.svg?branch=master)](https://travis-ci.org/uwearzt/nucleo-f429zi)
-[![crates.io](https://meritbadge.herokuapp.com/nucleo-f429zi)](https://crates.io/crates/nucleo-f429zi)
 
 Rust examples for ST NUCLEO-F429ZI.
 
