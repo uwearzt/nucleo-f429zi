@@ -1,0 +1,12 @@
+# Start with
+# JLinkGDBServer -if SWD -device STM32F429ZI
+
+target remote localhost:2331
+monitor interface swd
+
+file "target/thumbv7em-none-eabihf/debug/nucleo-f429zi"
+load
+
+monitor reset
+monitor halt
+break main

@@ -1,0 +1,32 @@
+[package]
+name = "nucleo-f429zi"
+version = "0.0.1"
+authors = ["Uwe Arzt <mail@uwe-arzt.de>"]
+edition = "2018"
+categories = ["embedded", "hardware-support", "no-std"]
+description = "Rust examples for ST NUCLEO-F429ZI"
+documentation = "https://docs.rs/nucleo-f429zi"
+keywords = ["stm32", "NUCLEO"]
+license = "Apache-2.0"
+repository = "https://github.com/uwearzt/nucleo-f429zi"
+
+[dependencies]
+stm32f429 = { git = "https://github.com/birkenfeld/stm32f429.git", features = ["rt"] }
+stm32f429-hal = "0.1.1"
+embedded-hal = "0.2.2"
+
+panic-semihosting = "0.5.1"
+cortex-m = "0.5.8"
+cortex-m-rt = "0.6.7"
+
+stm32-eth = { git = "https://github.com/birkenfeld/stm32-eth" }
+smoltcp = { git = "https://github.com/birkenfeld/smoltcp", default-features = false, features = ["log", "proto-ipv4", "proto-ipv6", "socket-udp", "socket-tcp"] }
+# smoltcp = { version = "0.5.0", default-features = false, features = ["log", "proto-ipv4", "socket-udp", "socket-tcp"] }
+
+[profile.dev]
+debug = true
+
+[profile.release]
+debug = true
+lto = true
+opt-level = "s"
