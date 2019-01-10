@@ -6,10 +6,6 @@
 #![no_main]
 #![no_std]
 
-// use smoltcp::socket::UdpSocket;
-// use smoltcp::socket::UdpSocketBuffer;
-// use smoltcp::socket::TcpSocketBuffer;
-
 extern crate cortex_m;
 use cortex_m::asm;
 
@@ -39,10 +35,6 @@ fn main() -> ! {
     gpiob.moder.modify(|_, w| unsafe { w.moder7().bits(1) } );
     gpiob.moder.modify(|_, w| unsafe { w.moder14().bits(1) } );
 
-    //let udp_rx_buffer = UdpSocketBuffer::new(vec![UdpPacketMetadata::EMPTY], vec![0; 64]);
-    //let udp_tx_buffer = UdpSocketBuffer::new(vec![UdpPacketMetadata::EMPTY], vec![0; 128]);
-    //let udp_socket = UdpSocket::new(udp_rx_buffer, udp_tx_buffer);
-   
     loop {
         gpiob.bsrr.write(|w| w.bs0().set_bit());
         gpiob.bsrr.write(|w| w.bs7().set_bit());
